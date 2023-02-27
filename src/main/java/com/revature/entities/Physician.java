@@ -5,13 +5,16 @@ import java.time.LocalDate;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table
 public class Physician {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer pId;
 	@Column
 	private String pName;
@@ -32,6 +35,9 @@ public class Physician {
 
 
 
+	
+
+
 	public Physician(Integer pId, String pName, String pExpertise, String email, Long contactNo, String address,
 			LocalDate localDate) {
 		super();
@@ -43,6 +49,9 @@ public class Physician {
 		Address = address;
 		this.localDate = localDate;
 	}
+
+
+
 
 
 
